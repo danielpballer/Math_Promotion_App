@@ -131,32 +131,53 @@ slide:not(.current) .plotly.html-widget{
 
 <slide class=""><hgroup><h2>Purpose</h2></hgroup><article  id="purpose">
 
-<p>The Mathelete Promotion Contact App serves as a way for the department to scan through promotion lists and pull out any former mathletes that have been promoted. This provides an opportunity for continued contact from the department thoughout an officer’s career as an avenue for recrutitment for junior faculty.</p>
+<p>The Mathlete Promotion Contact App serves as a way for the department to scan through promotion lists and pull out any former mathletes that have been promoted. This provides an opportunity for continued contact from the department throughout an officer’s career as an avenue for recruitment for junior faculty.</p>
 
-<p>These instructions serve as a blueprint for montly actions by the department S1 and yearly actions by the DAC office.</p>
+<p>These instructions serve as a blueprint for monthly actions by the department S1 and yearly actions by the DAC office.</p>
 
 </article></slide><slide class=""><hgroup><h2>The code</h2></hgroup><article  id="the-code">
 
 <p>The file <code>Mathlete Promotion Contact App.rmd</code> conducts the following steps.</p>
 
 <ol>
-<li>Pulls the names and new ranks from the montly pdf promotion report.</li>
+<li>Pulls the names and new ranks from the monthly pdf promotion report.</li>
 <li>Matches names in the department database to those in the monthly promotion report.</li>
 <li>Adds a new column to the database indicating the rank officers were promoted to that month.</li>
 </ol>
 
 </article></slide><slide class=""><hgroup><h2>DAC Actions </h2><h3> Annually</h3></hgroup><article  id="dac-actions-annually">
 
-<p>Each spring, as part of the exit interviews, the DAC office will administer the Mathelete Info survey via Microsoft Forms.</p>
+<p>Each spring, as part of the exit interviews, the DAC office will administer the Mathlete Info survey via Microsoft Forms.</p>
 
-<p>After the completion of all exit interviews, the DACs will download the results and copy the new entries into the department mathelete database maintained by the S1.</p>
+<p>After the completion of all exit interviews, the DACs will download the results and copy the new entries into the department mathlete database maintained by the S1.</p>
+
+</article></slide><slide class=""><hgroup><h2>Getting the code </h2><h3> Installing Git</h3></hgroup><article  id="getting-the-code-installing-git">
+
+<p><font size="4.5"></p>
+
+<ol>
+<li><p>Make sure git is installed on your computer. If not, you can download and install git <a href='https://gitforwindows.org' title=''>HERE</a> for free.</p></li>
+<li><p>Ensure Global Options in RStudio are configured.</p>
+
+<ul>
+<li>Select Tools at the top of RStudio</li>
+<li>Select Global Options (a pop up will open)</li>
+<li>Select Git/SVN from the left side panel</li>
+<li>Under &ldquo;Git Executable:&rdquo; select <code>Browse</code> and navigate to your git executable file. When you are done the path will probably look something like this &ldquo;C:/Program Files/Git/bin/git.exe&rdquo;</li>
+<li>Select Terminal from the left side panel.</li>
+<li>Use the drop down menu so that &ldquo;New terminals open with:&rdquo; <code>Git Bash</code></li>
+<li>Select <code>Apply</code> followed by <code>Ok</code> at the bottom of the global options page.</li>
+</ul></li>
+</ol>
+
+<p></font></p>
 
 </article></slide><slide class=""><hgroup><h2>Getting the code </h2><h3> Creating a R project based on the GitHub repo</h3></hgroup><article  id="getting-the-code-creating-a-r-project-based-on-the-github-repo">
 
 <p><font size="4"></p>
 
 <ol>
-<li>Go to the Mathelete Promotion App repo on the GitHub website <a href='https://github.com/danielpballer/Math_Promotion_App' title=''>HERE</a>.</li>
+<li>Go to the Mathlete Promotion App repo on the GitHub website <a href='https://github.com/danielpballer/Math_Promotion_App' title=''>HERE</a>.</li>
 <li>Select the copy button to the right of the URL in the blue &ldquo;Quick Setup&rdquo; box.</li>
 <li>In RStudio select <code>Project (None)</code> in the very top right corner.</li>
 <li>Select <code>New Project</code></li>
@@ -175,7 +196,7 @@ slide:not(.current) .plotly.html-widget{
 
 <p>The S1 office will maintain the official copy of the mathlete database (excel file).</p>
 
-<p>Each month the S1 office will recieve the monthly promotion report. This report will need to be saved in the project folder you created on the previous slide.</p>
+<p>Each month the S1 office will receive the monthly promotion report. This report will need to be saved in the project folder you created on the previous slide.</p>
 
 <p>To run the code only three lines in the <code>.rmd</code> file need to be updated.</p>
 
@@ -185,13 +206,13 @@ slide:not(.current) .plotly.html-widget{
 <li>Line 27: Set the current year. (make sure the numeric year is in quotes)</li>
 </ol>
 
-<p>Once these three line are updated select the down arrow next to the <code>Run</code> button at the top of the source pannel and select <code>Run All</code>. This action will execute the code and add a column to the database for that month indicating what rank officers were promoted to. If no officers in the database were promoted that month an empty column will be added to the database.</p>
+<p>Once these three line are updated select the down arrow next to the <code>Run</code> button at the top of the source panel and select <code>Run All</code>. This action will execute the code and add a column to the database for that month indicating what rank officers were promoted to. If no officers in the database were promoted that month an empty column will be added to the database.</p>
 
 <p></font></p>
 
 </article></slide><slide class=""><hgroup><h2>Questions/Issues</h2></hgroup><article  id="questionsissues">
 
-<p>If anything breaks or you have any questions/comments about the code or database don’t hesitate to reach out for suport:</p>
+<p>If anything breaks or you have any questions/comments about the code or database don’t hesitate to reach out for support:</p>
 
 <center>
 

@@ -1,0 +1,84 @@
+---
+title: "Contact App Instructions"
+author: "MAJ Daniel Baller"
+date: "12/2/2021"
+output: 
+  ioslides_presentation:
+    logo: CDAS.PNG
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(fontawesome)
+```
+
+## Purpose
+
+The Mathelete Promotion Contact App serves as a way for the department to scan through promotion lists and pull out any former mathletes that have been promoted.  This provides an opportunity for continued contact from the department thoughout an officer's career as an avenue for recrutitment for junior faculty.  
+
+These instructions serve as a blueprint for montly actions by the department S1 and yearly actions by the DAC office.  
+
+## The code
+
+The file `Mathlete Promotion Contact App.rmd` conducts the following steps.
+
+1. Pulls the names and new ranks from the montly pdf promotion report.
+2. Matches names in the department database to those in the monthly promotion report.
+3. Adds a new column to the database indicating the rank officers were promoted to that month.
+
+## DAC Actions | Annually
+
+Each spring, as part of the exit interviews, the DAC office will administer the Mathelete Info survey via Microsoft Forms.  
+
+After the completion of all exit interviews, the DACs will download the results and copy the new entries into the department mathelete database maintained by the S1.
+
+## Getting the code | Creating a R project based on the GitHub repo
+
+<font size="4">
+
+1. Go to the Mathelete Promotion App repo on the GitHub website [HERE](https://github.com/danielpballer/Math_Promotion_App).
+2. Select the copy button to the right of the URL in the blue "Quick Setup" box.
+3. In RStudio select `Project (None)` in the very top right corner.
+4. Select `New Project`
+5. In the pop-up window select `Version Control`.
+6. Select `Git`
+7. Paste the URL you copied from your GitHub repo into the top box under "Repository URL:"
+8. Select `Browse` to navigate to the folder you would like this project to be in.  
+9. Select `Create Project`.
+
+</font>
+
+## S1 Actions | Monthly
+
+<font size="4">
+
+The S1 office will maintain the official copy of the mathlete database (excel file).
+
+Each month the S1 office will recieve the monthly promotion report.  This report will need to be saved in the project folder you created on the previous slide.
+
+To run the code only three lines in the `.rmd` file need to be updated.  
+
+1. Line 23: update the name of the promotion report file.  (if you delete the current name in file name and then hit `tab` while your cursor is between the "" it will bring up a list of all files in the folder that you can select from)
+2. Line 26: Set the current month.  (make sure the name of the month is in quotes)
+3. Line 27: Set the current year.  (make sure the numeric year is in quotes)
+
+Once these three line are updated select the down arrow next to the `Run` button at the top of the source pannel and select `Run All`.  This action will execute the code and add a column to the database for that month indicating what rank officers were promoted to.  If no officers in the database were promoted that month an empty column will be added to the database.  
+
+</font>
+
+## Questions/Issues
+
+If anything breaks or you have any questions/comments about the code or database don't hesitate to reach out for suport:
+
+<center>
+
+![](./images/github-circle-small-24292e-FFFFFF.png) [danielpballer](https://github.com/danielpballer)
+
+<img src="./images/twitter-brands.svg" width="50" height="50">
+[\@danielpballer](https://twitter.com/danielpballer)
+
+<img src="./images/envelope-square-solid.svg" width="50" height="50"> danielballer.usma@gmail.com
+
+<img src="./images/phone-solid.svg" width="50" height="50"> 503-702-6323
+
+</center>

@@ -1,0 +1,77 @@
+---
+title: "PDF_Extraction"
+author: "MAJ Daniel Baller"
+date: "11/5/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+```{r reading packages and name of file}
+library(tidyverse)
+library(pdftools)
+library(readxl)
+library(openxlsx)
+
+#Set the name of your file 
+file = "AC Officer By Name List for November.pdf"
+db = "DMATH_GradDatabase.xlsx"
+
+current_month = "November"
+current_year = "2021"
+
+month = str_c(current_month, current_year, sep = "_") 
+```
+
+```{r reading the pdf}
+#reading in the pdf and selecting only the rows of text that represent individuals being promoted
+txt = pdf_text(file) %>% 
+  read_lines() %>% 
+  as.data.frame() %>% 
+  rename(entry = ".") %>% 
+  filter(str_detect(entry, "-")==T)
+
+#reading in the D/Math Database
+database = read_xlsx(path = db)
+```
+
+```{r}
+# splitting each row into last name, first name, middle initial or name, and remaining information (Rank, DOR, Order Number), Then pulls out rank as its own variable.
+txt2 = str_split_fixed(txt$entry, pattern = "\\s", n = 4) %>% 
+  as.data.frame() %>% 
+  rename(Last = V1, First = V2, Middle = V3, Info = V4) %>% 
+  #adding commas to the entries that do not have them in the pdf
+  mutate(Last = case_when(str_detect(Last, ",")==T ~ Last,
+                          TRUE~str_c(Last, ",", sep = ""))) %>%
+  #Adding a rank column
+  mutate(Rank = case_when(str_detect(Info, "COL")==T ~ "COL",
+                          str_detect(Info, "LTC")==T ~ "LTC", 
+                          str_detect(Info, "MAJ")==T ~ "MAJ", 
+                          str_detect(Info, "CPT")==T ~ "CPT", 
+                          str_detect(Info, "1LT")==T ~ "1LT"))%>%
+  #creating the name column (Last, First)
+  mutate(Name = str_c(Last, First, sep = " ")) %>% 
+  select(Name, Rank) %>%
+  #removing entries that are not people by filtering out ones without rank
+  filter(is.na(Rank)!=T)
+
+#Uncomment if you want to save just a list of names and ranks from the pdf
+#write_csv(txt3, "Promotion_Names.csv")
+```
+
+```{r}
+promoted = database %>% 
+  mutate(short_name = str_sub(NAME, start = 1, end = 19), 
+         .after = "NAME") %>% 
+  left_join(txt2, by = c("short_name" = "Name")) %>% 
+  rename(!!month := Rank)
+
+write.xlsx(promoted, "DMATH_GradDatabase.xlsx", overwrite = TRUE)
+```
+

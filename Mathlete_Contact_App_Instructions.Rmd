@@ -54,20 +54,21 @@ After the completion of all exit interviews, the DACs will download the results 
 <font size="4">
 
 1. Go to the Mathlete Promotion App repo on the GitHub website [HERE](https://github.com/danielpballer/Math_Promotion_App).
-2. Select the copy button to the right of the URL in the blue "Quick Setup" box.
-3. In RStudio select `Project (None)` in the very top right corner.
-4. Select `New Project`
-5. In the pop-up window select `Version Control`.
-6. Select `Git`
-7. Paste the URL you copied from your GitHub repo into the top box under "Repository URL:"
-8. Select `Browse` to navigate to the folder you would like this project to be in.  
-9. Select `Create Project`.
+2. Select the green code button. 
+3. Select the copy button to the right of the URL in the pop up box.
+4. In RStudio select `Project (None)` in the very top right corner.
+5. Select `New Project`
+6. In the pop-up window select `Version Control`.
+7. Select `Git`
+8. Paste the URL you copied from your GitHub repo into the top box under "Repository URL:"
+9. Select `Browse` to navigate to the folder you would like this project to be in.  
+10. Select `Create Project`.
 
 </font>
 
 ## S1 Actions | Monthly
 
-<font size="4">
+<font size="3">
 
 The S1 office will maintain the official copy of the mathlete database (excel file).
 
@@ -75,11 +76,14 @@ Each month the S1 office will receive the monthly promotion report.  This report
 
 To run the code only three lines in the `.rmd` file need to be updated.  
 
-1. Line 23: update the name of the promotion report file.  (if you delete the current name in file name and then hit `tab` while your cursor is between the "" it will bring up a list of all files in the folder that you can select from)
-2. Line 26: Set the current month.  (make sure the name of the month is in quotes)
-3. Line 27: Set the current year.  (make sure the numeric year is in quotes)
+1. Line 23: update the name of the promotion report file.  (if you delete the file name that is in the document and then hit `tab` while your cursor is between the "" it will bring up a list of all files in the folder that you can select from)
+2. Line 24: Ensure that the name of the mathlet database is correct.
+3. Line 26: Set the current month.  (make sure the name of the month is in quotes)
+4. Line 27: Set the current year.  (make sure the numeric year is in quotes)
 
-Once these three line are updated select the down arrow next to the `Run` button at the top of the source panel and select `Run All`.  This action will execute the code and add a column to the database for that month indicating what rank officers were promoted to.  If no officers in the database were promoted that month an empty column will be added to the database.  
+Once these four line are updated select the down arrow next to the `Run` button at the top of the source panel and select `Run All`.  This action will execute the code and add a column to the database for that month indicating what rank officers were promoted to.  If no officers in the database were promoted that month an empty column will be added to the database.  
+
+Sanity Check: Some of the names of our former majors are very common.  (i.e. Kim, John).  This may result in their name matching a different person on the list with the same name.  It is recommended quickly go through the database after running the code to remove any erroneous promotions i.e. year groups that are not being looked at yet and double check middle initials for common names.
 
 </font>
 

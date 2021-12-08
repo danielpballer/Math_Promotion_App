@@ -178,7 +178,8 @@ slide:not(.current) .plotly.html-widget{
 
 <ol>
 <li>Go to the Mathlete Promotion App repo on the GitHub website <a href='https://github.com/danielpballer/Math_Promotion_App' title=''>HERE</a>.</li>
-<li>Select the copy button to the right of the URL in the blue &ldquo;Quick Setup&rdquo; box.</li>
+<li>Select the green code button.</li>
+<li>Select the copy button to the right of the URL in the pop up box.</li>
 <li>In RStudio select <code>Project (None)</code> in the very top right corner.</li>
 <li>Select <code>New Project</code></li>
 <li>In the pop-up window select <code>Version Control</code>.</li>
@@ -192,7 +193,7 @@ slide:not(.current) .plotly.html-widget{
 
 </article></slide><slide class=""><hgroup><h2>S1 Actions </h2><h3> Monthly</h3></hgroup><article  id="s1-actions-monthly">
 
-<p><font size="4"></p>
+<p><font size="3"></p>
 
 <p>The S1 office will maintain the official copy of the mathlete database (excel file).</p>
 
@@ -201,12 +202,15 @@ slide:not(.current) .plotly.html-widget{
 <p>To run the code only three lines in the <code>.rmd</code> file need to be updated.</p>
 
 <ol>
-<li>Line 23: update the name of the promotion report file. (if you delete the current name in file name and then hit <code>tab</code> while your cursor is between the &quot;&quot; it will bring up a list of all files in the folder that you can select from)</li>
+<li>Line 23: update the name of the promotion report file. (if you delete the file name that is in the document and then hit <code>tab</code> while your cursor is between the &quot;&quot; it will bring up a list of all files in the folder that you can select from)</li>
+<li>Line 24: Ensure that the name of the mathlet database is correct.</li>
 <li>Line 26: Set the current month. (make sure the name of the month is in quotes)</li>
 <li>Line 27: Set the current year. (make sure the numeric year is in quotes)</li>
 </ol>
 
-<p>Once these three line are updated select the down arrow next to the <code>Run</code> button at the top of the source panel and select <code>Run All</code>. This action will execute the code and add a column to the database for that month indicating what rank officers were promoted to. If no officers in the database were promoted that month an empty column will be added to the database.</p>
+<p>Once these four line are updated select the down arrow next to the <code>Run</code> button at the top of the source panel and select <code>Run All</code>. This action will execute the code and add a column to the database for that month indicating what rank officers were promoted to. If no officers in the database were promoted that month an empty column will be added to the database.</p>
+
+<p>Sanity Check: Some of the names of our former majors are very common. (i.e. Kim, John). This may result in their name matching a different person on the list with the same name. It is recommended quickly go through the database after running the code to remove any erroneous promotions i.e. year groups that are not being looked at yet and double check middle initials for common names.</p>
 
 <p></font></p>
 
